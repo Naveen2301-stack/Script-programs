@@ -1,55 +1,54 @@
-form = document.getElementById("myform");
-function validateform(event) {
-  event.preventDefault();
-  var userName = document.myform.uname.value;
-  var email = document.myform.email.value;
-  var password = document.myform.psw.value;
-  var country = document.myform.country.value;
-  var gender = document.myform.gender;
-  var address = document.myform.address.value;
-  var lang = document.getElementsByName("lang");
-  var atposition = email.indexOf("@");
-  var dotpostion = email.lastIndexOf(".");
-  var data = new Object();
-  var i;
-  // valid = true;
-  var langArray = new Array();
-  for (i = 0; i < lang.length; i++) {
-    if (lang[i].checked) {
-      langArray.push(lang[i].value);
-      // valid = false;
-    }
-  }
-  if (userName == null || userName == "") {
-    alert("Name can't be blank");
-    return false;
-  }else if (
-    atposition < 1 ||
-    dotpostion < atposition + 2 ||
-    dotpostion + 2 >= email.length
-  ) {
-    alert("Please enter a valid e-mail address:");
-    return false;
-  } else if (password.length < 6) {
-    alert("Password must be at least 6 characters long.");
-    return false;
-  } else if (country == "select") {
-    alert("Please Select Country.");
-    return false;
-  } else if (gender.value == "") {
-    alert("Please Select Gender.");
-    return false;
-  } else if (address == "") {
-    alert("Please Provide Address.");
-  }
+// Select all input elements for varification
+const name = document.getElementById("name");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const phoneNumber = document.getElementById("phoneNumber");
+const gender = document.registration;
+const language = document.getElementById("language");
+const zipcode = document.getElementById("zipcode");
+
+// function for form varification
+function formValidation() {
   
-  data.userName = userName;
-  data.email = email;
-  data.password = password;
-  data.country = country;
-  data.gender = gender.value;
-  data.lang = langArray;
-  data.address = address;
-  console.log(data);
+  // checking name length
+  if (name.value.length < 2 || name.value.length > 20) {
+    alert("Name length should be more than 2 and less than 21");
+    name.focus();
+    return false;
+  }
+  // checking email
+  if (email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+    alert("Please enter a valid email!");
+    email.focus();
+    return false;
+  }
+  // checking password
+  if (!password.value.match(/^.{5,15}$/)) {
+    alert("Password length must be between 5-15 characters!");
+    password.focus();
+    return false;
+  }
+  // checking phone number
+  if (!phoneNumber.value.match(/^[1-9][0-9]{9}$/)) {
+    alert("Phone number must be 10 characters long number and first digit can't be 0!");
+    phoneNumber.focus();
+    return false;
+  }
+  // checking gender
+  if (gender.gender.value === "") {
+    alert("Please select your gender!");
+    return false;
+  }
+  // checking language
+  if (language.value === "") {
+    alert("Please select your language!")
+    return false;
+  }
+  // checking zip code
+  if (!zipcode.value.match(/^[0-9]{6}$/)) {
+    alert("Zip code must be 6 characters long number!");
+    zipcode.focus();
+    return false;
+  }
+  return true;
 }
-form.addEventListener("submit", validateform);
