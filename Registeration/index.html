@@ -11,45 +11,49 @@
 
 <body>
     <div>
-        <div class="Registration-div">
-            <h1>Registration for PhotoExpo</h1>
-            <form class="regform" name="form" id="Login_form">
+        <div class="Registration">
+            <h1>Registration form</h1>
+            <form class="regform" name="form" id="Register_form">
                 <p for="regname">Name</p>
                 <input class="inputname" type="text" name="name" placeholder="Enter your name" />
-                <p>Email-id</p>
+                <p>Enter-Email</p>
                 <input type="text" name="email" class="inputemail" placeholder="Enter your Email id" />
                 <p>Password</p>
-                <input type="text" name="pass" class="inputpass" placeholder="Enter your password" />
+                <input type="text" name="pwd" class="inputpass" placeholder="Enter your password" />
                 <p>Confirm password</p>
-                <input type="text" name="rpass" class="inputpass" placeholder="reenter password" />
+                <input type="text" name="cpass" class="inputpass" placeholder="reenter password" />
                 <div class="checkbox-div">
-                    <span>Gender:- </span>
+                    <span>Select Gender </span>
                     <input type="radio" id="male" name="Gender" value="Male" />
                     <label for="male">Male</label>
                     <input type="radio" id="female" name="Gender" value="Female" />
                     <label for="female">Female</label>
+                    <input type="radio" id="others" name="Gender" value="others" />
+                    <label for="female">Others</label>
                 </div>
                 <div class="dropdown-div">
                     <div class="dropdown-subdiv">
-                        <span>Area of Interests:-</span>
-                        <input type="checkbox" id="js" name="Interests" value="Photography" />
-                        <label for="js">Photography</label>
-                        <input type="checkbox" id="react" name="Interests" value="Videography" />
-                        <label for="react">Videography</label>
-                        <input type="checkbox" id="angular" name="interests" value="Film Maker" />
-                        <label for="react">Film Maker</label>
+                        <span>Hobbies</span>
+                        <input type="checkbox" id="js" name="hobbies" value="Cricket" />
+                        <label for="js">Cricket</label>
+                        <input type="checkbox" id="react" name="hobbies" value="Singing" />
+                        <label for="react">Singing</label>
+                        <input type="checkbox" id="angular" name="hobbies" value="ReadingBooks" />
+                        <label for="react">ReadingBooks</label>
                     </div>
 
                 </div>
                 <div>
-                    <label for="sub">Choose a subscription for entering the competition</label>
-                    <select id="sub" name="subscription">
-                        <option value="monthly">monthly</option>
-                        <option value="yearly">yearly</option>
-                        <option value="weekly">weekly</option>
+                    <label for="sub">Choose a country</label>
+                    <select id="sub" name="countries">
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="Uk">UK</option>
+                        <option value="pakistan">Pakistan</option>
+                        <option value="germany">Germany</option>
                     </select>
                 </div>
-                <p>Message</p>
+                <p>Adress</p>
                 <textarea class="textarea" cols="30" rows="10" name="msg"></textarea>
                 <button type="submit" class="submit">Submit</button>
             </form>
