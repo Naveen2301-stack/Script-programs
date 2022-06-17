@@ -4,10 +4,10 @@ function validateform(event) {
   var userName = document.myform.uname.value;
   var email = document.myform.email.value;
   var password = document.myform.psw.value;
-  var courses = document.myform.country.value;
+  var country = document.myform.country.value;
   var gender = document.myform.gender;
   var address = document.myform.address.value;
-  var hobies = document.getElementsByName("lang");
+  var lang = document.getElementsByName("lang");
   var atposition = email.indexOf("@");
   var dotpostion = email.lastIndexOf(".");
   var data = new Object();
@@ -33,8 +33,8 @@ function validateform(event) {
   } else if (password.length < 6) {
     alert("Password must be at least 6 characters long.");
     return false;
-  } else if (courses == "select") {
-    alert("Please Select Course.");
+  } else if (country == "select") {
+    alert("Please Select Country.");
     return false;
   } else if (gender.value == "") {
     alert("Please Select Gender.");
@@ -48,7 +48,7 @@ function validateform(event) {
   data.password = password;
   data.country = country;
   data.gender = gender.value;
-  data.hobies = hobiesArray;
+  data.lang = langArray;
   data.address = address;
   console.log(data);
 }
